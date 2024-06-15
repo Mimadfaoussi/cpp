@@ -6,14 +6,14 @@
 #    By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 00:47:33 by mfaoussi          #+#    #+#              #
-#    Updated: 2024/06/14 17:13:48 by mfaoussi         ###   ########.fr        #
+#    Updated: 2024/06/15 05:13:51 by mfaoussi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			c++
-NAME=		My Awesome PhoneBook
+NAME=		Ph
 CFLAGS=		-Wall -Wextra -Werror -std=c++98
-SRCS=		megaphone.cpp
+SRCS=		Contact.cpp PhoneBook.cpp main.cpp
 OBJS = 		$(SRCS:.cpp=.o)
 
 all: $(NAME)
