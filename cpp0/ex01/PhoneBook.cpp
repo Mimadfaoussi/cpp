@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/15 03:14:44 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/06/15 04:52:07 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/06/15 04:59:49 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,18 @@ void	PhoneBook::searchContact() const
 		displayContact(index);
 }
 
-// void	PhoneBook::displayContactList() const
-// {
-// 	std::cout << 
-// }
+void	PhoneBook::displayContactList() const
+{
+	std::cout	<< std::setw(10) << "Index" << "|"
+				<< std::setw(10) << "First name" << "|"
+				<< std::setw(10) << "Last name" << "|"
+				<< std::setw(10) << "Nickname" << std::endl;
+	std::cout << "-------------------------------------------" << std::endl;
+	    for (int i = 0; i < currentSize; i++) {
+			std::cout	<< std::setw(10) << i << "|"
+						<< std::setw(10) << truncateField(contacts[i].getFirstName()) << "|"
+						<< std::setw(10) << truncateField(contacts[i].getLastName()) << "|"
+						<< std::setw(10) << truncateField(contacts[i].getNickName()) << std::endl;
+	}
+}
+
