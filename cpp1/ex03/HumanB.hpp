@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 19:19:34 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/06/16 19:27:43 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/06/16 19:56:19 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class HumanB
 	public:
 	HumanB(const std::string& name);
 	
-	void				attack();
-	void				setWeapon(Weapon& WeaponB);
+	void				attack() const;
+	void				setWeaponB(Weapon& WeaponB);
 
 	private:
-	Weapon				WeaponB;
+	Weapon*				WeaponB;
 	std::string 		name;
 };
 
