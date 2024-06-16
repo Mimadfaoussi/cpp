@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/16 19:19:34 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/06/16 19:29:10 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/06/16 20:13:18 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class HumanA
 {
 	public:
-	HumanA(Weapon& WeaponA, const std::string& name);
+	HumanA(const std::string& name, Weapon& WeaponA);
 	
 	void				attack() const;
 

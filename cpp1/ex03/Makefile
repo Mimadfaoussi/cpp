@@ -6,14 +6,14 @@
 #    By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 00:47:33 by mfaoussi          #+#    #+#              #
-#    Updated: 2024/06/16 05:49:29 by mfaoussi         ###   ########.fr        #
+#    Updated: 2024/06/16 20:15:21 by mfaoussi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			c++
 NAME=		BRAIN
 CFLAGS=		-Wall -Wextra -Werror -std=c++98
-SRCS=		main.cpp
+SRCS=		main.cpp Weapon.cpp HumanB.cpp HumanA.cpp
 OBJS = 		$(SRCS:.cpp=.o)
 
 all: $(NAME)
