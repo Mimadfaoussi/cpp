@@ -6,12 +6,12 @@
 #    By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 00:47:33 by mfaoussi          #+#    #+#              #
-#    Updated: 2024/06/16 03:25:21 by mfaoussi         ###   ########.fr        #
+#    Updated: 2024/06/16 03:57:57 by mfaoussi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			c++
-NAME=		BraiiiiiiinnnzzzZ
+NAME=		Moarbrainz!
 CFLAGS=		-Wall -Wextra -Werror -std=c++98
 SRCS=		Zombie.cpp ZombieHorde.cpp main.cpp
 OBJS = 		$(SRCS:.cpp=.o)
