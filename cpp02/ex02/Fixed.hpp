@@ -80,6 +80,8 @@ class Fixed {
 	float	toFloat(void) const;
 	int		toInt(void) const;
 
+	Fixed&	min(Fixed &obj1, Fixed &obj2);
+
 	private:
 
 	int	_n;

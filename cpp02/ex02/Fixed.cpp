@@ -172,3 +172,10 @@ int		Fixed::toInt(void) const
 {
 	return (_n >> _bits);
 }
+
+static Fixed&	min(Fixed &obj1, Fixed &obj2)
+{
+	if (obj1 > obj2)
+		return (obj1);
+	return (obj2);
+}
