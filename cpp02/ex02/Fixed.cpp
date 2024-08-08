@@ -115,6 +115,37 @@ Fixed	Fixed::operator/(const Fixed& other) const
 	return result;
 }
 
+// increment and decrement overloading 
+
+Fixed&	Fixed::operator++(void)
+{
+	_n++;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed	copy(*this);
+	_n++;
+	return (copy);
+}
+
+Fixed&	Fixed::operator--(void)
+{
+	_n--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	copy(*this);
+
+	_n--;
+	return (copy);
+}
+
+
+
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed_number)
 {
 	os << fixed_number.toFloat();

@@ -50,6 +50,24 @@ class Fixed {
 	Fixed	operator*(const Fixed& other) const;
 	Fixed	operator/(const Fixed& other) const;
 
+	// increment and decrement 
+
+	// pre-increment
+
+	Fixed&	operator++(void);
+
+	// post-increment
+
+	Fixed	operator++(int);
+
+	// pre-decrement
+
+	Fixed&	operator--(void);
+
+	// post-decrement
+
+	Fixed	operator--(int);
+
 	friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed_number);
 
 	//getter and setter 
