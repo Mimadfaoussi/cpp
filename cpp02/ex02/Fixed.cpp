@@ -14,36 +14,36 @@
 
 Fixed::Fixed()
 {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	_n = 0;
 }
 
 Fixed::Fixed(const int nb)
 {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	_n = nb << _bits;
 }
 
 Fixed::Fixed(const float nb)
 {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	_n = roundf(nb * (1 << _bits));
 }
 
 Fixed::~Fixed()
 {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = other;
 }
 
 Fixed&	Fixed::operator=(const Fixed& other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		this->_n = other.getRawBits();
@@ -173,9 +173,30 @@ int		Fixed::toInt(void) const
 	return (_n >> _bits);
 }
 
-static Fixed&	min(Fixed &obj1, Fixed &obj2)
+Fixed&	Fixed::min(Fixed &obj1, Fixed &obj2)
 {
-	if (obj1 > obj2)
+	if (obj1 <= obj2)
+		return (obj1);
+	return (obj2);
+}
+
+const Fixed&	Fixed::min(const Fixed &obj1, const Fixed &obj2)
+{
+	if (obj1 <= obj2)
+		return (obj1);
+	return (obj2);
+}
+
+Fixed&	Fixed::max(Fixed &obj1, Fixed &obj2)
+{
+	if (obj1 >= obj2)
+		return (obj1);
+	return (obj2);
+}
+
+const Fixed& Fixed::max(const Fixed &obj1, const Fixed &obj2)
+{
+	if (obj1 >= obj2)
 		return (obj1);
 	return (obj2);
 }
