@@ -11,9 +11,9 @@
 # **************************************************************************** #
 
 CC=			c++
-NAME=		Fixed
+NAME=		ClapTrap
 CFLAGS=		-Wall -Wextra -Werror -std=c++98
-SRCS=		Fixed.cpp main.cpp
+SRCS=		ClapTrap.cpp main.cpp
 OBJS = 		$(SRCS:.cpp=.o)
 
 all: $(NAME)
