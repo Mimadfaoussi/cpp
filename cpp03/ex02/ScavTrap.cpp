@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 18:11:03 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/10 18:24:47 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/13 14:42:42 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap&   ScavTrap::operator=(ScavTrap const &other)
 {
-    std::cout << "copy assignment operator called " << std::endl;
+    std::cout << "ScravTrap copy assignment operator called " << std::endl;
     if (this != &other)
     {
         _name = other._name;
@@ -61,7 +61,7 @@ void    ScavTrap::attack(const std::string& target)
 	}
 	else
 	{
-		std::cout << "No energy or hit points left for ClapTrap " << _name <<  std::endl;
+		std::cout << "No energy or hit points left for ScavTrap " << _name <<  std::endl;
 	}
 
 }
