@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/13 13:17:07 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/13 14:42:31 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/13 15:42:37 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ FragTrap::FragTrap(const std::string& name): ClapTrap(name)
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
-	std::cout << "FragTrap "<< _name << " is ready" <<  std::endl;
+	std::cout << "FragTrap Constructor with name as argument called for"<< _name << " is ready" <<  std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other)

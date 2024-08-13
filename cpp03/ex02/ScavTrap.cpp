@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 18:11:03 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/13 14:42:42 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/13 15:42:43 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
-    std::cout << "ScavTrap "<< _name << " is ready" <<  std::endl;
+    std::cout << "ScavTrap Constructor with name as argument called for"<< _name << " is ready" <<  std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
