@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 18:11:03 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/13 14:09:03 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/13 16:03:57 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ScavTrap : public ClapTrap {
 
     private:
 
-}
+};
 
 # endif
 

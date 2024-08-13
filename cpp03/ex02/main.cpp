@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 18:25:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/13 15:38:43 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/13 16:06:00 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(void)
 	
 
 	killua.attack("gon");
-	gon.takeDamage(4);
+	gon.takeDamage(400);
 	gon.beRepaired(3);
 	gon.attack("killua");
 	killua.takeDamage(3);
