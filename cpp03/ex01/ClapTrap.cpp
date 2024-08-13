@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/10 18:25:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/13 15:45:07 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/13 16:00:57 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ ClapTrap::ClapTrap(const ClapTrap& other):
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap" << _name << " is destroyed" << std::endl;
+	std::cout << "ClapTrap " << _name << " is destroyed" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
