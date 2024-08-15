@@ -6,14 +6,14 @@
 #    By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 00:47:33 by mfaoussi          #+#    #+#              #
-#    Updated: 2024/08/15 01:23:51 by mfaoussi         ###   ########.fr        #
+#    Updated: 2024/08/15 09:38:26 by mfaoussi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			c++
 NAME=		Animal
 CFLAGS=		-Wall -Wextra -Werror -std=c++98
-SRCS=		Animal.cpp Dog.cpp Cat.cpp main.cpp
+SRCS=		Animal.cpp Dog.cpp Cat.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = 		$(SRCS:.cpp=.o)
 
 all: $(NAME)
