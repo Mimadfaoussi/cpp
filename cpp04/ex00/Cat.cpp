@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:03:50 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/14 20:40:00 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/15 08:16:16 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ Cat&	Cat::operator=(Cat const &other)
 	return (*this);
 }
 
-void	Cat::makeSound() override
+void	Cat::makeSound() 
 {
 	std::cout << "Meaoww Meaooww  Meeeeeaoooowwwwwwwww " << std::endl;
+}
+
+std::string	Cat::getType() const
+{
+	return type;
 }

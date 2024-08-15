@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:33:46 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/14 18:57:05 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/15 08:26:43 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ class Dog : public Animal {
 	Dog& operator=(const Dog& other);
 	~Dog();
 
-	void	makeSound();
+	virtual void	makeSound();
+	virtual std::string	getType() const;
+
 	protected:
 	std::string	type;
 };

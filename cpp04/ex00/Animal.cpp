@@ -6,14 +6,14 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:03:50 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/14 16:28:25 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/15 08:14:43 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Animal.hpp"
 
 Animal::Animal():
-	type("Default")
+	type("Animal")
 {
 	std::cout << "Animal default constructor called!" << std::endl;
 }
@@ -35,7 +35,12 @@ Animal::~Animal()
 	std::cout << "Animal type : " << type << "is destroyed" << std::endl;
 }
 
-void	makeSound()
+void	Animal::makeSound() const
 {
 	std::cout << "General animal sound " << std::endl;
+}
+
+std::string	Animal::getType() const
+{
+	return type;
 }

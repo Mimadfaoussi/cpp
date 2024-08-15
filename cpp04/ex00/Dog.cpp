@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:03:50 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/14 19:53:29 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/15 08:26:48 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,3 +46,9 @@ void	Dog::makeSound()
 {
 	std::cout << "Howww aoww aowwwwouuuu " << std::endl;
 }
+
+std::string	Dog::getType() const
+{
+	return type;
+}
+
