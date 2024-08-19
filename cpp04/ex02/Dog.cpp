@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:03:50 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/19 16:07:51 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/19 17:26:17 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,7 @@ Dog&	Dog::operator=(Dog const &other)
 	return (*this);
 }
 
-void	Dog::makeSound() const
-{
+void	Dog::makeSound() const {
 	std::cout << "Howww aoww aowwwwouuuu " << std::endl;
 }
 

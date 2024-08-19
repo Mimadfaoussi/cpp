@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:33:46 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/15 09:23:48 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/19 17:28:21 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ class Animal {
 	Animal& operator=(const Animal& other);
 	virtual ~Animal();
 
-	virtual void		makeSound() const;
+	// Abstract class needs at least one pure virtual function 
+
+	virtual void		makeSound() const = 0;
 	virtual std::string	getType() const;
 
 	protected:
