@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:03:50 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/15 08:14:43 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/19 16:19:31 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Animal::Animal():
 Animal::Animal(const std::string& type):
 	type(type)
 {
-	std::cout << "Constructor with type as argument called " << std::endl;
+	std::cout << "Animal Constructor with type as argument called " << std::endl;
 }
 
 Animal::Animal(const Animal& other):

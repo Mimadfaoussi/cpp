@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:33:46 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/15 09:33:16 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/08/19 16:07:55 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CAT_HPP
 
 #include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal {
 	public:
