@@ -6,7 +6,6 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 16:03:50 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/19 17:25:38 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +33,6 @@ Animal::~Animal()
 {
 	std::cout << "Animal type : " << type << "is destroyed" << std::endl;
 }
-
-
 
 std::string	Animal::getType() const
 {
