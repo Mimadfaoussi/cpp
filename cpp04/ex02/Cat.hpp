@@ -6,7 +6,6 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/14 15:33:46 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/08/19 16:07:55 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +23,7 @@ class Cat : public Animal {
 	Cat& operator=(const Cat& other);
 	~Cat();
 
-	void		makeSound() const;
+	void		makeSound() const override;
 
 	protected:
 	std::string	type;
