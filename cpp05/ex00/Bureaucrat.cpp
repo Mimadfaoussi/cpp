@@ -6,11 +6,15 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 13:46:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/28 14:24:50 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/28 15:58:38 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat() : name("Default") {
+	setGrade(10);
+}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name) {
 	setGrade(grade);

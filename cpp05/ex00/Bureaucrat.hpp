@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:33:05 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/28 14:24:20 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/28 15:57:32 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class GradeTooLowException: public std::exception {
 class Bureaucrat {
 	public:
 	Bureaucrat(const std::string &name, int grade);
+	Bureaucrat();
 	~Bureaucrat();
 
 	int	getGrade() const;
