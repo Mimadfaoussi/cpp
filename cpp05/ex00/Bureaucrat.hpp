@@ -6,39 +6,50 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:33:05 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/28 13:15:00 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/28 14:24:20 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef BUREAUCRAT_H
+# ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
 # include <string>
 # include <iostream>
-# include <stdexcept> 
+# include <stdexcept>
+
+class GradeTooHighException: public std::exception {
+	public : 
+	const char* what() const throw() {
+		return "Grade is too high!";
+	}
+};
+
+class GradeTooLowException: public std::exception {
+	public :
+	const char* what() const throw() {
+		return "Grade is too low!";
+	}
+};
+
+
 
 class Bureaucrat {
 	public:
-	Bureaucrat(const std::string &name, int grade) : name(name) {
-		setGrade(grade);
-	}
-	int	getGrade() const{
-		return grade;
-	}
+	Bureaucrat(const std::string &name, int grade);
+	~Bureaucrat();
 
-	void	setGrade(int grd){
-		if (grd < 1 || grd > 150)
-			throw std::out_of_range("grade must be between 1 and 150\n");
-		grade = grd;
-	}
-
-	void	display() const {
-		std::cout << "Name : " << name << "  Grade : " << grade << std::endl;
-	}
-
+	int	getGrade() const;
+	std::string	getName() const;
+	void	incrementGrade();
+	void	decrementGrade();
+	void	setGrade(int grd);
+	void	display() const;
+	
 	protected:
 	const std::string	name;
-	int			grade;
+	int					grade;
 };
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 
 # endif
