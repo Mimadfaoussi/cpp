@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:22:57 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/28 14:25:50 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/28 15:56:12 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,18 @@
 
 int main() {
     try {
-        Bureaucrat john("John", 42);
-        std::cout << john << std::endl;
+        Bureaucrat imad("imad", 10);
+        imad.display();
+        
+        Bureaucrat kamel("kamel", 1);
+        kamel.display();
 
-        Bureaucrat jane("Jane", 1);
-        std::cout << jane << std::endl;
-
-        // Triggering exceptions for test
-        Bureaucrat tooHigh("TooHigh", 151);  // This should throw GradeTooHighException
-    } catch (const std::exception& e) {
+        Bureaucrat tooLow("tooLow", 151);
+        tooLow.display();
+        
+    } catch (const std::exception& e)
+    {
         std::cerr << e.what() << std::endl;
     }
-
     return 0;
 }
