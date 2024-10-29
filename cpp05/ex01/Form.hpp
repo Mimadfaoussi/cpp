@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:25:33 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/29 11:42:42 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:54:14 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Form {
 	const int 			  getGradeToSign() const;
 	const int 			  getGradeToExecute() const;
 
+	void				  beSigned(Bureaucrat &br);
 
 	private:
 	const std::string	name;

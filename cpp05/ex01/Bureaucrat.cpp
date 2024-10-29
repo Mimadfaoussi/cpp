@@ -6,11 +6,13 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 13:46:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/28 15:58:38 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/29 12:06:08 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
+# include "Form.hpp"
+
 
 Bureaucrat::Bureaucrat() : name("Default") {
 	setGrade(10);
@@ -54,6 +56,15 @@ void	Bureaucrat::setGrade(int grd){
 		throw GradeTooLowException();
 	grade = grd;
 }
+
+void	Bureaucrat::signForm(Form &form)
+{
+	if (form.getFormSigned() == true)
+		std::cout << getName() << " signed " << form.getName() << std::endl;
+	else
+		std::cout << getName() << " couldn’t sign " << form.getName() << " because he doesn't have privilege to do so" << std::endl;
+}
+
 
 void	Bureaucrat::display() const {
 	std::cout << "Name : " << name << "  Grade : " << grade << std::endl;

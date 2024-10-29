@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 11:19:42 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/29 11:46:22 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:53:47 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,22 @@ const int Form::getGradeToExecute() const
 	return gradeToExecute;
 }
 
+
+
+void	Form::beSigned(Bureaucrat &br)
+{
+	if (br.getGrade() <= getGradeToSign())
+		formSigned = true;
+	else
+		throw GradeTooLowException();
+}
+
+
 std::ostream& operator<<(std::ostream& os, const Form& form) {
-    os << "Form Name: " << form.getName() << "\n"
-       << "Grade to Sign: " << form.getGradeToSign() << "\n"
-       << "Grade to Execute: " << form.getGradeToExecute() << "\n";
-    return os; // Return the output stream to allow chaining
+	os << "Form Name: " << form.getName() << "\n"
+	   << "Grade to Sign: " << form.getGradeToSign() << "\n"
+		<< "Grade to Execute: " << form.getGradeToExecute() << "\n";
+	return os; // Return the output stream to allow chaining
 }
 
 

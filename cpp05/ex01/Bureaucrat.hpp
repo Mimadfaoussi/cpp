@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:33:05 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/29 10:43:16 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/29 12:03:15 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ class Bureaucrat {
 	void	decrementGrade();
 	void	setGrade(int grd);
 	void	display() const;
-	
+
+	void	signForm(Form &form);
+
 	protected:
 	const std::string	name;
 	int					grade;
