@@ -6,16 +6,17 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:22:57 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/29 10:15:46 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/29 17:40:29 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 int main() {
     try {
-        Bureaucrat imad("imad", 10);
+        Bureaucrat imad("imad", 2);
         imad.display();
         
         Bureaucrat kamel("kamel", 4);
@@ -27,11 +28,12 @@ int main() {
         Bureaucrat defa;
         defa.display();
 
-        Bureaucrat tooLow("tooLow", 150);
-        // tooLow.incrementGrade();
-        tooLow.decrementGrade();
-        tooLow.display();
+        Form voiceOfPeople("Leute", 3, 5);
         
+        std::cout << voiceOfPeople;
+        
+        voiceOfPeople.beSigned(imad);
+        imad.signForm(voiceOfPeople);
     } catch (const std::exception& e)
     {
         std::cerr << e.what() << std::endl;

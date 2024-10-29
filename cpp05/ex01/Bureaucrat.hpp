@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:33:05 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/29 12:03:15 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/29 14:02:00 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string>
 # include <iostream>
 # include <stdexcept>
+# include "Form.hpp"
 
 class GradeTooHighException: public std::exception {
 	public : 

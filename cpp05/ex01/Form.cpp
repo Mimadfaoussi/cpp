@@ -6,18 +6,20 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 11:19:42 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/29 11:53:47 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/29 17:39:51 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Form.hpp"
+# include "Bureaucrat.hpp"
+
 
 Form::Form() : name("Default"), gradeToSign(3), gradeToExecute(5)
 {
 	formSigned = false;
 }
 
-Form::Form(const std::string &name, const int grdSign, const int grdExecute) : name(name), gradeToSign(3), gradeToExecute(5) {
+Form::Form(const std::string &name, const int grdSign, const int grdExecute) : name(name), gradeToSign(grdSign), gradeToExecute(grdExecute) {
 	formSigned = false;
 }
 

@@ -6,14 +6,17 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:25:33 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/29 11:54:14 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/10/29 17:38:23 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef FORM_HPP
 # define FORM_HPP
-# include "Bureaucrat.hpp"
+# include <string>
+# include <iostream>
+# include <stdexcept>
 
+class Bureaucrat;
 
 class Form {
 	public:
@@ -29,6 +32,20 @@ class Form {
 	const int 			  getGradeToExecute() const;
 
 	void				  beSigned(Bureaucrat &br);
+
+	class GradeTooLowException : public std::exception {
+		public:
+			const char* what() const throw() {
+				return "Grade is too low!";
+			}
+	};
+
+	class GradeTooHighException : public std::exception {
+		public:
+			const char* what() const throw() {
+				return "Grade is too high!";
+			}
+	};
 
 	private:
 	const std::string	name;
