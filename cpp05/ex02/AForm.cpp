@@ -6,52 +6,52 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 11:19:42 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/30 13:57:16 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/02 18:05:48 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Form.hpp"
+# include "AForm.hpp"
 # include "Bureaucrat.hpp"
 
 
-Form::Form() : name("Default"), gradeToSign(3), gradeToExecute(5)
+AForm::AForm() : name("Default"), gradeToSign(3), gradeToExecute(5)
 {
 	formSigned = false;
 }
 
-Form::Form(const std::string &name, const int grdSign, const int grdExecute) : name(name), gradeToSign(grdSign), gradeToExecute(grdExecute) {
+AForm::AForm(const std::string &name, const int grdSign, const int grdExecute) : name(name), gradeToSign(grdSign), gradeToExecute(grdExecute) {
 	formSigned = false;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
 	std::cout << "Form : " << name << " has been destroyed!\n";
 }
 
-const std::string Form::getName() const 
+const std::string AForm::getName() const 
 {
 	return name;
 }
 
 
-bool Form::getFormSigned() const
+bool AForm::getFormSigned() const
 {
 	return formSigned;
 }
 
-const int Form::getGradeToSign() const
+const int AForm::getGradeToSign() const
 {
 	return gradeToSign;
 }
 
-const int Form::getGradeToExecute() const
+const int AForm::getGradeToExecute() const
 {
 	return gradeToExecute;
 }
 
 
 
-void	Form::beSigned(Bureaucrat &br)
+void	AForm::beSigned(Bureaucrat &br)
 {
 	if (br.getGrade() <= getGradeToSign())
 		formSigned = true;
@@ -60,7 +60,7 @@ void	Form::beSigned(Bureaucrat &br)
 }
 
 
-std::ostream& operator<<(std::ostream& os, const Form& form) {
+std::ostream& operator<<(std::ostream& os, const AForm& form) {
 	os << "Form Name: " << form.getName() << "\n"
 	   << "Grade to Sign: " << form.getGradeToSign() << "\n"
 		<< "Grade to Execute: " << form.getGradeToExecute() << "\n";

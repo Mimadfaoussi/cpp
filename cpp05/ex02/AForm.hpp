@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:25:33 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/30 13:57:30 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/02 18:29:36 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,22 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 	public:
-	Form();
-	Form(const std::string &name, const int gradeToSign, const int gradeToExecute);
-	~Form();
+	AForm();
+	AForm(const std::string &name, const int gradeToSign, const int gradeToExecute);
+	virtual ~AForm();
 
 	//    getters : 
 
-	const std::string	  getName() const;
-	bool			 	  getFormSigned() const;
-	const int 			  getGradeToSign() const;
-	const int 			  getGradeToExecute() const;
+	virtual const std::string	  getName() const;
+	virtual bool			 	  getFormSigned() const;
+	virtual const int 			  getGradeToSign() const;
+	virtual const int 			  getGradeToExecute() const;
 
-	void				  beSigned(Bureaucrat &br);
+	virtual void				  beSigned(Bureaucrat &br);
+
+	virtual void				  execute(Bureaucrat const &executor) const = 0;
 
 	class GradeTooLowException : public std::exception {
 		public:
@@ -56,7 +58,7 @@ class Form {
 };
 
 
-std::ostream& operator<<(std::ostream& os, const Form& form);
+std::ostream& operator<<(std::ostream& os, const AForm& form);
 
 
 # endif
