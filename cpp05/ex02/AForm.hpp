@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 10:25:33 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/02 18:29:36 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/03 13:31:22 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ class AForm {
 		public:
 			const char* what() const throw() {
 				return "Grade is too high!";
+			}
+	};
+
+	class FormNotSigned : public std::exception {
+		public:
+			const char* what() const throw() {
+				return "Form is not signed";
 			}
 	};
 

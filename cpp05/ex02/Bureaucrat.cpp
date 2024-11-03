@@ -6,12 +6,12 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 13:46:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/10/29 12:06:08 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/03 13:36:39 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Bureaucrat.hpp"
-# include "Form.hpp"
+# include "AForm.hpp"
 
 
 Bureaucrat::Bureaucrat() : name("Default") {
@@ -57,7 +57,7 @@ void	Bureaucrat::setGrade(int grd){
 	grade = grd;
 }
 
-void	Bureaucrat::signForm(Form &form)
+void	Bureaucrat::signForm(AForm &form)
 {
 	if (form.getFormSigned() == true)
 		std::cout << getName() << " signed " << form.getName() << std::endl;
