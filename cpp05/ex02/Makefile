@@ -6,15 +6,14 @@
 #    By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 00:47:33 by mfaoussi          #+#    #+#              #
-#    Updated: 2024/11/03 14:27:42 by mfaoussi         ###   ########.fr        #
+#    Updated: 2024/11/03 14:57:26 by mfaoussi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			c++
 NAME=		Bureaucrat
 CFLAGS=		-Wall -Wextra -Werror -std=c++98
-SRCS=		Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp
-# RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+SRCS=		Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJS = 		$(SRCS:.cpp=.o)
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 13:46:09 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/03 13:36:39 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/03 16:13:19 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,34 @@ void	Bureaucrat::setGrade(int grd){
 
 void	Bureaucrat::signForm(AForm &form)
 {
-	if (form.getFormSigned() == true)
+	try
+	{
+		form.beSigned(*this);
 		std::cout << getName() << " signed " << form.getName() << std::endl;
-	else
+	}
+	catch(const std::exception& e)
+	{
+		// std::cerr << e.what() << '\n';
 		std::cout << getName() << " couldn’t sign " << form.getName() << " because he doesn't have privilege to do so" << std::endl;
+	}
 }
 
 
 void	Bureaucrat::display() const {
 	std::cout << "Name : " << name << "  Grade : " << grade << std::endl;
+}
+
+void	Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " didn't execute " << form.getName() << " : "  << e.what() << std::endl;
+	}
 }
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {

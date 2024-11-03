@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 17:50:54 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/03 14:17:46 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/03 14:51:07 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@ PresidentialPardonForm::~PresidentialPardonForm()
 {
 	std::cout <<  "PresidentialPardonForm destructor ." << std::endl;
 }
-
-
-// const std::string PresidentialPardonForm::getTarget() const
-// {
-// 	return target;
-// }
 
 void	PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {

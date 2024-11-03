@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 11:33:05 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/03 13:12:41 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/03 15:48:10 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ class Bureaucrat {
 	void	display() const;
 
 	void	signForm(AForm &form);
+	void	executeForm(AForm const & form);
 
 	protected:
 	const std::string	name;
