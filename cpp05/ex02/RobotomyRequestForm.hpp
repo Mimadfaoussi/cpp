@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 18:07:12 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/02 18:42:45 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/03 14:13:32 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class RobotomyRequestForm : public AForm {
 	RobotomyRequestForm(const std::string &target);
 	~RobotomyRequestForm();
 
-	void	execute(Bureaucrat const &executor) const override;
+	void	execute(Bureaucrat const &executor) const;
 
 	private:
 	const std::string	target;

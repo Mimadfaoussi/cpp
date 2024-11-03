@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 17:50:54 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/03 13:41:15 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/03 14:17:46 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string	&target): AForm("ShrubberyCreationForm", 25, 5), target(target)
 {
-	std::cout <<  " PresidentialPardonForm constructor ." << std::endl;
+	std::cout <<  "PresidentialPardonForm constructor." << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout <<  " PresidentialPardonForm destructor ." << std::endl;
+	std::cout <<  "PresidentialPardonForm destructor ." << std::endl;
 }
 
 
