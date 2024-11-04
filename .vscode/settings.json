@@ -62,6 +62,11 @@
         "new": "cpp",
         "ratio": "cpp",
         "stdexcept": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "deque": "cpp",
+        "fstream": "cpp",
+        "stack": "cpp",
+        "__tree": "cpp",
+        "map": "cpp"
     }
 }
