@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:22:57 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/03 16:16:11 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/04 11:03:05 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,44 +16,22 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+# include "Intern.hpp"
 
 int main() {
-	try {
-		Bureaucrat bureaucrat("Alice", 50);
-		std::cout << bureaucrat << std::endl;
+    Intern intern;
 
-		ShrubberyCreationForm shrubberyForm("Home");
-		std::cout << shrubberyForm << std::endl;
+    // Valid form creation
+    AForm* form1 = intern.makeForm("RobotomyRequestForm", "Bender");
+    // Handle memory cleanup for form1 if needed
 
-		bureaucrat.signForm(shrubberyForm);
-		bureaucrat.executeForm(shrubberyForm);
+    // Invalid form creation
+    AForm* form2 = intern.makeForm("NonExistentForm", "SomeTarget");
+    // Handle memory cleanup for form2 if needed
 
-		RobotomyRequestForm robotomyForm("Bob");
-		std::cout << robotomyForm << std::endl;
+    // Remember to delete created forms
+    delete form1;  // if form1 was created successfully
+    delete form2;  // if form2 was created successfully
 
-		bureaucrat.signForm(robotomyForm);
-		bureaucrat.executeForm(robotomyForm);
-
-		PresidentialPardonForm pardonForm("Charlie");
-		std::cout << pardonForm << std::endl;
-
-
-		bureaucrat.signForm(pardonForm);
-		bureaucrat.executeForm(pardonForm);
-		
-	} catch (const std::exception &e) {
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-	try {
-		Bureaucrat lowGradeBureaucrat("Bob", 150);
-		std::cout << lowGradeBureaucrat << std::endl;
-
-		ShrubberyCreationForm lowGradeForm("Garden");
-		lowGradeBureaucrat.signForm(lowGradeForm);
-	} catch (const std::exception &e) {
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-	return 0;
+    return 0;
 }
