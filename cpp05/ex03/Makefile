@@ -6,7 +6,7 @@
 #    By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 00:47:33 by mfaoussi          #+#    #+#              #
-#    Updated: 2024/11/04 11:03:30 by mfaoussi         ###   ########.fr        #
+#    Updated: 2024/11/05 18:31:43 by mfaoussi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,11 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
+
+# Compile the .cpp files into .o files with the flags
+%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
 
 clean:
 	$(RM) $(OBJS)
