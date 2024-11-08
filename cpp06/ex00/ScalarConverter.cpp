@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:52:22 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/08 11:18:43 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:52:42 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void ScalarConverter::displayConversions(int i) {
 		std::cout << "Non displayable" << std::endl;
 
 	std::cout << "int: " << i << std::endl;
-	std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(i) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(i) << std::endl;
 }
 
 
@@ -85,8 +85,8 @@ void ScalarConverter::displayConversions(float i) {
 		std::cout << "Non displayable" << std::endl;
 
 	std::cout << "int: " << static_cast<int> (i) << std::endl;
-	std::cout << "float: " << (i) << "f" << std::endl;
-	std::cout << "double: " << static_cast<double>(i) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << (i) << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(i) << std::endl;
 }
 
 
@@ -99,13 +99,27 @@ void ScalarConverter::displayConversions(double i) {
 		std::cout << "Non displayable" << std::endl;
 
 	std::cout << "int: " << static_cast<int> (i) << std::endl;
-	std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
-	std::cout << "double: " << (i) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f" << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << (i) << std::endl;
 }
 
 void ScalarConverter::convert(const std::string &literal)
 {
-	if (IsChar(literal))
+	if (literal == "nan" || literal == "nanf" || literal == "+inf" || literal == "-inf" || literal == "+inff" || literal == "-inff") 
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+
+		if (literal.back() == 'f') {
+			std::cout << "float: " << literal << std::endl;
+			std::cout << "double: " << literal.substr(0, literal.size() - 1) << std::endl;
+		}
+		else {
+			std::cout << "float: " << literal << "f" << std::endl;
+			std::cout << "double: " << literal << std::endl;
+		}
+
+	} else if (IsChar(literal))
 	{
 		char c = literal[1];
 		displayConversions(c);
@@ -127,6 +141,5 @@ void ScalarConverter::convert(const std::string &literal)
 	} else {
 		std::cout << "Invalid literal input." << std::endl;
 	}
-
 }
 

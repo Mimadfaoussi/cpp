@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:50:45 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/08 11:18:49 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:52:53 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
 
 class ScalarConverter {
 	private:
