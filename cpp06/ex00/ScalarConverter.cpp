@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:52:22 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/10 06:57:56 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/10 10:54:46 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ScalarConverter::ScalarConverter(){};
 ScalarConverter::~ScalarConverter(){};
 ScalarConverter::ScalarConverter(const ScalarConverter &other){};
-// ScalarConverter& operator=(const ScalarConverter &other);
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other){};
 
 
 bool ScalarConverter::IsChar(const std::string &literal)
