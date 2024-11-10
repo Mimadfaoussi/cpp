@@ -6,12 +6,12 @@
 #    By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 00:47:33 by mfaoussi          #+#    #+#              #
-#    Updated: 2024/11/08 15:27:41 by mfaoussi         ###   ########.fr        #
+#    Updated: 2024/11/10 07:32:31 by mfaoussi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			c++
-NAME=		convert
+NAME=		Serializer
 CFLAGS=		-Wall -Wextra -Werror -std=c++98
 SRCS=		main.cpp Serialize.cpp
 OBJS = 		$(SRCS:.cpp=.o)
