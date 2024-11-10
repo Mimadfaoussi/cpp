@@ -6,11 +6,17 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 18:52:22 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/08 11:52:42 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/10 06:57:56 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ScalarConverter.hpp"
+
+ScalarConverter::ScalarConverter(){};
+ScalarConverter::~ScalarConverter(){};
+ScalarConverter::ScalarConverter(const ScalarConverter &other){};
+// ScalarConverter& operator=(const ScalarConverter &other);
+
 
 bool ScalarConverter::IsChar(const std::string &literal)
 {
