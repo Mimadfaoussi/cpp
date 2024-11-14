@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 17:23:51 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/11 06:41:39 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/14 08:14:51 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class IndexOutOfRangeException : public std::exception
 	{
 		return "out of range!\n";
 	}
-}
+};
 
 template <typename T>
 class Array {
@@ -66,6 +66,8 @@ class Array {
 					elements[i] = other.elements[i];
 				}
 			}
+			else
+				elements = NULL;
 		}
 		return (*this);
 	}
@@ -91,10 +93,14 @@ class Array {
 		return elements[index];
 	}
 
-
+	unsigned int size() const 
+	{
+		return (arraySize);
+	}
+	
 	private:
 	T*				elements;
 	unsigned int	arraySize;
-}
+};
 
 # endif
