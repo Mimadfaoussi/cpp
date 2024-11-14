@@ -14,31 +14,26 @@
 # define EASYFIND_HPP
 
 # include "iostream"
-# include "exception"
 # include <algorithm>
+# include <exception>
+# include <vector>
 
 
 template <typename T>
-int	easyfind(T &numbers, int n)
+typename T::iterator	easyfind(T &numbers, int n)
 {
-	if (numbers == NULL)
-		return (-1);
-	int nb = std::find(numbers.begin(), numbers.end(), n);
-	if (nb != numbers.)
+	typename T::iterator	nb;
+
+	nb = std::find(numbers.begin(), numbers.end(), n);
+	if (nb != numbers.end())
+	{
+		std::cout << "Found value : " << *nb << std::endl;
+		return (nb);
+	}
+	else
+	{
+		throw std::runtime_error("Exception: value not Found");
+	}
 }
-
-
 
 # endif 
-
-
-std::vector<int> vec = {1, 2, 3, 4, 5};
-
-// Find the first occurrence of '3' in the vector
-auto it = std::find(vec.begin(), vec.end(), 3);
-
-if (it != vec.end()) {
-    std::cout << "Found value: " << *it << std::endl;
-} else {
-    std::cout << "Value not found." << std::endl;
-}
