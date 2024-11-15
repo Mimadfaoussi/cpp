@@ -6,27 +6,26 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:37:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/14 11:30:13 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 08:48:07 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-# include "easyfind.hpp"
+# include "Span.hpp"
 
 int main()
 {
-    std::vector<int>    vec;
-
-    vec.push_back(10);
-    vec.push_back(20);
-    vec.push_back(30);
-    vec.push_back(40);
-    vec.push_back(41);
-    vec.push_back(45);
+    Span vec(10);
+    vec.addNumber(8);
+    vec.addNumber(1);
+    vec.addNumber(5);
+    vec.addNumber(3);
+    vec.addNumber(4);
+    vec.addNumber(20);
+    vec.addNumber(0);
 
     try{
-        easyfind(vec, 30);
-        easyfind(vec, 33);
+        vec.shortestSpan();
     }catch (const std::exception &e)
     {
         std::cout << e.what() << std::endl;

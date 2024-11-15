@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:37:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/14 11:30:13 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 09:18:09 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <vector>
 
 
-template <typename T>
+// template <typename T>
 
 class Span {
 	public:
@@ -37,17 +37,18 @@ class Span {
 		public:
 		const char* what() const throw();
 	};
-	class UnderRangeException : public std::exception 
+	class NoDistanceException : public std::exception
 	{
 		public:
 		const char* what() const throw();
 	};
 
+	void			printNumbers(std::vector<int> nbs) const;
 	unsigned int	getSize() const;
 
 	private:
 	unsigned int 		N;
 	std::vector<int>	_numbers;
-}	
+};
 
 # endif 
