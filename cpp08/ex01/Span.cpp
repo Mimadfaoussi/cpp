@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 08:13:19 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/15 09:38:03 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:09:54 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,15 @@ Span::Span(const Span &other): N(other.N), _numbers(other._numbers) {}
 
 Span::~Span(){}
 
-unsigned int Span::getSize() const 
+Span& Span::operator=(const Span &other)
 {
-	return N;
+	if (this != &other)
+	{
+		N = other.N;
+		_numbers = other._numbers;
+	}
+	return (*this);
 }
-
-// Span& Span::operator=(cont Span &other)
-// {
-// 	if (this != &other)
-// 	{
-// 		N = other.getSize();
-// 		_numbers = other._numbers;
-// 	}
-// 	return (*this);
-// }
 
 
 void	Span::addNumber(unsigned int nb)
@@ -44,6 +39,15 @@ void	Span::addNumber(unsigned int nb)
 	}
 	_numbers.push_back(nb);
 }
+
+void	Span::addNumbers(std::vector<int>::iterator const &start, std::vector<int>::iterator const &end)
+{
+	if (std::distance(start, end) > static_cast<int>(N - _numbers.size()))
+		throw OutOfRangeException();
+	_numbers.insert(_numbers.end(), start, end);
+}
+
+
 
 void	Span::printNumbers(std::vector<int> nbs) const
 {
@@ -64,7 +68,6 @@ int	Span::shortestSpan() const
 		throw NoDistanceException();
 	copy_numbers = _numbers;
 	std::sort(copy_numbers.begin(), copy_numbers.end());
-	// printNumbers(copy_numbers);
 	shortest = copy_numbers[1] - copy_numbers[0];
 	for (unsigned int i = 0; i < copy_numbers.size(); i++)
 	{
@@ -74,7 +77,6 @@ int	Span::shortestSpan() const
 				shortest = copy_numbers[i + 1] - copy_numbers[i];
 		}
 	}
-	// std::cout << "Shortest span is : " << shortest << std::endl;
 	return (shortest);
 }
 
@@ -93,11 +95,11 @@ int	Span::longestSpan() const
 }
 
 const char *Span::OutOfRangeException::what() const throw() {
-  return "Span is full!\n";
+  return "Span is Out Of Range !";
 }
 
 const char *Span::NoDistanceException::what() const throw() {
-  return "Not enough Points!\n";
+  return "Not enough Points!";
 }
 
 
