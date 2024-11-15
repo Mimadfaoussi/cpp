@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 08:13:19 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/15 09:18:52 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 09:33:35 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	Span::addNumber(unsigned int nb)
 
 void	Span::printNumbers(std::vector<int> nbs) const
 {
+	std::cout << "ordered numbers : " << std::endl;
 	for (unsigned int i = 0; i < nbs.size(); i++)
 	{
 		std::cout << nbs[i] << " ";
@@ -54,21 +55,41 @@ void	Span::printNumbers(std::vector<int> nbs) const
 	std::cout << std::endl;
 }
 
-unsigned int	Span::shortestSpan() const
+int	Span::shortestSpan() const
 {
 	std::vector<int>	copy_numbers;
+	int		shortest;
 
 	if (_numbers.size() < 2)
 		throw NoDistanceException();
 	copy_numbers = _numbers;
-	std::cout << "copy numbers before sort : " << std::endl;
-	printNumbers(copy_numbers);
 	std::sort(copy_numbers.begin(), copy_numbers.end());
-	
-	std::cout << "copy numbers after sort : " << std::endl;
 	printNumbers(copy_numbers);
-	
-	return (0);
+	shortest = copy_numbers[1] - copy_numbers[0];
+	for (unsigned int i = 0; i < copy_numbers.size(); i++)
+	{
+		if (i != copy_numbers.size() - 1)
+		{
+			if (copy_numbers[i + 1] - copy_numbers[i] < shortest)
+				shortest = copy_numbers[i + 1] - copy_numbers[i];
+		}
+	}
+	std::cout << "Shortest span is : " << shortest << std::endl;
+	return (shortest);
+}
+
+int	Span::longestSpan() const
+{
+	std::vector<int>	copy_numbers;
+	int		longest;
+
+	if (_numbers.size() < 2)
+		throw NoDistanceException();
+	copy_numbers = _numbers;
+	std::sort(copy_numbers.begin(), copy_numbers.end());	
+	longest = copy_numbers[copy_numbers.size() - 1] - copy_numbers[0];
+	std::cout << "Longestspan is : " << longest << std::endl;
+	return (longest);
 }
 
 const char *Span::OutOfRangeException::what() const throw() {

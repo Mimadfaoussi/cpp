@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:37:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/15 09:18:09 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 09:29:47 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ class Span {
 	Span& operator=(const Span &other);
 
 	void			addNumber(unsigned int nb);
-	unsigned int	shortestSpan() const;
-	unsigned int	longestSpan() const;
+	int	shortestSpan() const;
+	int	longestSpan() const;
 
 	class OutOfRangeException : public std::exception 
 	{

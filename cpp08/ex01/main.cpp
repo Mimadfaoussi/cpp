@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:37:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/15 08:48:07 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 09:34:00 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main()
 
     try{
         vec.shortestSpan();
+        vec.longestSpan();
     }catch (const std::exception &e)
     {
         std::cout << e.what() << std::endl;
