@@ -6,13 +6,13 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 08:13:19 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/15 10:09:54 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:52:58 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Span.hpp"
 
-// Span::Span(){}
+Span::Span(){}
 
 Span::Span(unsigned int N): N(N){}
 

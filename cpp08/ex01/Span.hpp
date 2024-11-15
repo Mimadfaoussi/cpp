@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:37:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/15 10:09:23 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 19:13:18 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,8 @@
 # include <algorithm>
 # include <exception>
 # include <vector>
-
-
-// template <typename T>
-
-
+# include <ctime>
+# include <cstdlib>
 
 class Span {
 	public:
@@ -51,6 +48,7 @@ class Span {
 	private:
 	unsigned int 		N;
 	std::vector<int>	_numbers;
+	Span();
 };
 
 # endif 

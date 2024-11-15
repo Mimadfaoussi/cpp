@@ -6,12 +6,13 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 10:37:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/15 10:06:27 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 19:21:18 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 # include "Span.hpp"
+
 
 // int main()
 // {
@@ -38,7 +39,7 @@ int main()
 			vector.push_back(i*2);
 		}
 
-		Span vec(100);
+		Span vec(100000);
 		vec.addNumber(8);
 		vec.addNumber(1);
 		vec.addNumber(5);
@@ -47,10 +48,21 @@ int main()
 		vec.addNumber(20);
 		vec.addNumber(0);
 		vec.addNumbers(vector.begin(), vector.end());
+		
 
     
         std::cout << vec.shortestSpan() << std::endl;
         std::cout << vec.longestSpan()<< std::endl;
+
+		for (int i = 0; i < 10000; ++i)
+		{
+        	vec.addNumber(rand());
+    	}
+
+		std::cout << vec.shortestSpan() << std::endl;
+        std::cout << vec.longestSpan()<< std::endl;
+
+
     }catch (const std::exception &e)
     {
         std::cout << e.what() << std::endl;
