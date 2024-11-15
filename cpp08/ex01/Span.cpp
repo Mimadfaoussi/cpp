@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 08:13:19 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/15 09:33:35 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 09:38:03 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	Span::shortestSpan() const
 		throw NoDistanceException();
 	copy_numbers = _numbers;
 	std::sort(copy_numbers.begin(), copy_numbers.end());
-	printNumbers(copy_numbers);
+	// printNumbers(copy_numbers);
 	shortest = copy_numbers[1] - copy_numbers[0];
 	for (unsigned int i = 0; i < copy_numbers.size(); i++)
 	{
@@ -74,7 +74,7 @@ int	Span::shortestSpan() const
 				shortest = copy_numbers[i + 1] - copy_numbers[i];
 		}
 	}
-	std::cout << "Shortest span is : " << shortest << std::endl;
+	// std::cout << "Shortest span is : " << shortest << std::endl;
 	return (shortest);
 }
 
@@ -88,7 +88,7 @@ int	Span::longestSpan() const
 	copy_numbers = _numbers;
 	std::sort(copy_numbers.begin(), copy_numbers.end());	
 	longest = copy_numbers[copy_numbers.size() - 1] - copy_numbers[0];
-	std::cout << "Longestspan is : " << longest << std::endl;
+	// std::cout << "Longestspan is : " << longest << std::endl;
 	return (longest);
 }
 
