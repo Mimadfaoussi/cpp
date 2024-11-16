@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:02:44 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/15 15:45:07 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/15 18:58:59 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class MutantStack :public std::stack <T>
 
 	MutantStack() : std::stack<T>() {}
 	MutantStack(const MutantStack &other) : std::stack<T>(other) {}
+	~MutantStack(){};
 	MutantStack &operator=(const MutantStack &other)
 	{
 		if (this != &other)
