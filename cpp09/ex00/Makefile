@@ -6,12 +6,12 @@
 #    By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 00:47:33 by mfaoussi          #+#    #+#              #
-#    Updated: 2024/11/16 16:44:47 by mfaoussi         ###   ########.fr        #
+#    Updated: 2024/11/16 17:48:58 by mfaoussi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			c++
-NAME=		Bitcoin
+NAME=		btc
 CFLAGS=		-Wall -Wextra -Werror -std=c++98
 SRCS=		main.cpp BitcoinExchange.cpp
 OBJS = 		$(SRCS:.cpp=.o)
