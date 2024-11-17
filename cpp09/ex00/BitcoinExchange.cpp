@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:30:12 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 12:59:29 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:20:17 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,44 @@ bool BitcoinExchange::skiper(std::stringstream &strstream)
 	return (true);
 }
 
-void	BitcoinExchange::exchangeHandler(std::string &inputLine)
-{
-	std::string		inputDate;
-	std::string		btcAmount;
-	double			btcAmt;
+// void	BitcoinExchange::exchangeHandler(std::string &inputLine)
+// {
+// 	std::string		inputDate;
+// 	std::string		btcAmount;
+// 	double			btcAmt;
 
-	std::stringstream	strstream(inputLine);
-	if ( std::getline(strstream, inputDate, ' ') && skiper(strstream) && std::getline(strstream, btcAmount))
+// 	std::stringstream	strstream(inputLine);
+// 	if ( std::getline(strstream, inputDate, ' ') && skiper(strstream) && std::getline(strstream, btcAmount))
+// 	{
+// 		btcAmt = std::stod(btcAmount);
+
+// 	}
+// }
+
+
+void BitcoinExchange::exchangeHandler(std::string &inputLine) {
+	std::string inputDate;
+	std::string btcAmount;
+	double btcAmt;
+
+	std::stringstream strstream(inputLine);
+	if (std::getline(strstream, inputDate, ' ') && skiper(strstream) && std::getline(strstream, btcAmount)) 
 	{
 		btcAmt = std::stod(btcAmount);
-		std::cout << "the amount of my bitcoins are : " << btcAmt << std::endl;
+		auto x = exchangeRates.begin();
+		std::cout << "************|" << inputDate << "|**************" << std::endl;
+		std::cout << "************|" << x->first << "|**************" << std::endl;
+		auto it = exchangeRates.lower_bound(inputDate); // Find the first date not less than inputDate
+
+		if (it != exchangeRates.end())
+		{
+			std::cout << "Found a date : " << it->first << " with rate " << it->second << std::endl;
+		}
+		else
+		{
+			std::cerr << "Error: Invalid input line format" << std::endl;
+
+		}
 	}
 }
 

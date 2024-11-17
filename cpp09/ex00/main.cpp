@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:41:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 12:53:37 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:21:07 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,7 @@ int main(int argc, char **argv)
 		return 1;
 	}
 	inputHeader = true;
+	bitcoin.readDataBase("data.csv");
 	while (std::getline(inputFile, inputLine))
 	{
 		if (inputHeader || inputLine.empty())
@@ -142,7 +143,6 @@ int main(int argc, char **argv)
 			bitcoin.exchangeHandler(inputLine);
 		else
 			continue;
-
 	}
 	inputFile.close();
 	return (0);
