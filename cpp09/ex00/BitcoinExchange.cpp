@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:30:12 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/16 17:51:35 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 10:35:41 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,18 @@ void BitcoinExchange::readDataBase(const std::string &fileName)
 	file.close();
 }
 
+
+
+// void	BitcoinExchange::exchangeHandler(std::string &date, double btcAmt)
+// {
+	
+// }
+
+
 void BitcoinExchange::printExchangeRates() const {
-    // Declare the iterator explicitly as std::map<string, double>::const_iterator
-    for (std::map<std::string, double>::const_iterator it = exchangeRates.begin(); it != exchangeRates.end(); ++it) {
-        std::cout << "Date: " << it->first << "     Rate: " << it->second << std::endl;
-    }
+	for (std::map<std::string, double>::const_iterator it = exchangeRates.begin(); it != exchangeRates.end(); ++it) 
+	{
+		std::cout << "Date: " << it->first << "     Rate: " << it->second << std::endl;
+	}
 }
 
