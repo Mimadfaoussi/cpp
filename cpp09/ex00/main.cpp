@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:41:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 10:37:43 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 11:44:03 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,11 @@ bool validateValue(const std::string& value) {
 	double number;
 
 	ss >> number;
-	if (ss.fail() || !ss.eof()) return false;
+	if (ss.fail() || !ss.eof()) 
+	{
+		std::cout << "something is wrong" << std::endl;
+		return false;
+	}
 	if (number < 0)
 	{
 		std::cout << "not a positive number." << std::endl;
@@ -88,12 +92,22 @@ bool validateValue(const std::string& value) {
 	return (true);
 }
 
+bool check_expression(std::string inputLine)
+{
+	const std::regex InputRegex("^\\d{4}-\\d{2}-\\d{2}\\s*\\|\\s*-?\\d+(\\.\\d+)?$");
+	if (!std::regex_match(inputLine, InputRegex)) {
+		std::cout << "Error: bad input => " << inputLine << std::endl;
+		return true;
+	}
+	return false;
+}
 
 bool validate_line(const std::string& inputLine) {
 	std::stringstream ss(inputLine);
 	std::string date, value;
 
-	if (!std::getline(ss, date, ' ')) return false;
+	if ((!std::getline(ss, date, ' ')) || (check_expression(inputLine)))
+		return false;
 	skiper(ss);
 	if (!validateDate(date)) return false;
 	if (!std::getline(ss, value)) return false;
@@ -108,9 +122,9 @@ int main(int argc, char **argv)
 	BitcoinExchange	bitcoin;
 	bool			inputHeader;
 	std::string		inputLine;
-	std::string		inputDate;
-	std::string		btcAmount;
-	double			btcAmt;
+	// std::string		inputDate;
+	// std::string		btcAmount;
+	// double			btcAmt;
 	
 
 	if (argc != 2)
@@ -132,18 +146,17 @@ int main(int argc, char **argv)
 			inputHeader = false;
 			continue ;
 		}
-		std::stringstream	strstream(inputLine);
-		
-		if (std::getline(strstream, inputDate, ' ') && skiper(strstream) && std::getline(strstream, btcAmount))
-		{
-			btcAmt = std::stod(btcAmount);
-			std::cout << inputLine << std::endl;
-			if (validate_line(inputLine))
-				std::cout << "good line" << std::endl;
-			else
-				continue;
-		}
+		// std::stringstream	strstream(inputLine);
+		// if ( std::getline(strstream, inputDate, ' ') && skiper(strstream) && std::getline(strstream, btcAmount))
+		// btcAmt = std::stod(btcAmount);
+		std::cout << inputLine << std::endl;
+		if (validate_line(inputLine))
+			std::cout << "good line" << std::endl;
+		else
+			continue;
+
 	}
 	inputFile.close();
 	return (0);
 }
+
