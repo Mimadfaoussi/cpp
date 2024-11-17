@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:19:02 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 19:36:20 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:40:29 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ void	RPN::makeOperation(char c)
 	nb1 = this->popDigit();
 	nb2 = this->popDigit();
 	if (c == '+')
-		result = nb1 + nb2;
+		result = nb2 + nb1;
 	if (c == '-')
-		result = nb1 - nb2;
+		result = nb2 - nb1;
 	if (c == '*')
-		result = nb1 * nb2;
+		result = nb2 * nb1;
 	if (c == '/')
-		result = nb1 / nb2;
+		result = nb2 / nb1;
 	this->pushDigit(result);
 }
 
