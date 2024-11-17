@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:17:31 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 19:11:07 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:34:48 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class RPN {
 	void	pushDigit(int nb);
 	int		popDigit();
 	void	printStack();
+	void	makeOperation(char c);
+	void	checkResult();
 	
 	private:
 	std::stack<int>	operands;

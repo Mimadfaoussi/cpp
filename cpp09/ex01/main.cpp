@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:19:10 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 19:12:42 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:36:52 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ int main(int argc, char **argv)
 		}
 		else if (c == '+' || c == '-' || c == '/' || c == '*')
 		{
-			std::cout << "operator detected " << c << std::endl;
-			// operand is present
+			calculator.makeOperation(c);
 		}
 		else
 		{
@@ -46,7 +45,8 @@ int main(int argc, char **argv)
 			return (1);
 		}
 	}
-	calculator.printStack();
+	// calculator.printStack();
+	calculator.checkResult();
 	return (0);
 }
 
