@@ -6,21 +6,14 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:41:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 11:44:03 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 12:53:37 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "BitcoinExchange.hpp"
 
 
-bool skiper(std::stringstream &strstream)
-{
-	while (strstream.peek() == ' ' || strstream.peek() == '|')
-	{
-		strstream.ignore(1);
-	}
-	return (true);
-}
+
 
 
 bool isValidDate(int year, int month, int day) 
@@ -108,7 +101,7 @@ bool validate_line(const std::string& inputLine) {
 
 	if ((!std::getline(ss, date, ' ')) || (check_expression(inputLine)))
 		return false;
-	skiper(ss);
+	BitcoinExchange::skiper(ss);
 	if (!validateDate(date)) return false;
 	if (!std::getline(ss, value)) return false;
 	if (!validateValue(value)) return false;
@@ -122,9 +115,7 @@ int main(int argc, char **argv)
 	BitcoinExchange	bitcoin;
 	bool			inputHeader;
 	std::string		inputLine;
-	// std::string		inputDate;
-	// std::string		btcAmount;
-	// double			btcAmt;
+
 	
 
 	if (argc != 2)
@@ -146,12 +137,9 @@ int main(int argc, char **argv)
 			inputHeader = false;
 			continue ;
 		}
-		// std::stringstream	strstream(inputLine);
-		// if ( std::getline(strstream, inputDate, ' ') && skiper(strstream) && std::getline(strstream, btcAmount))
-		// btcAmt = std::stod(btcAmount);
 		std::cout << inputLine << std::endl;
 		if (validate_line(inputLine))
-			std::cout << "good line" << std::endl;
+			bitcoin.exchangeHandler(inputLine);
 		else
 			continue;
 
