@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:41:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 13:21:07 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:41:14 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,17 +69,17 @@ bool validateValue(const std::string& value) {
 	ss >> number;
 	if (ss.fail() || !ss.eof()) 
 	{
-		std::cout << "something is wrong" << std::endl;
+		std::cout << "Error: something is wrong" << std::endl;
 		return false;
 	}
 	if (number < 0)
 	{
-		std::cout << "not a positive number." << std::endl;
+		std::cout << "Error: not a positive number." << std::endl;
 		return false;
 	}
 	if (number > 1000)
 	{
-		std::cout << "too large a number." << std::endl;
+		std::cout << "Error: too large a number." << std::endl;
 		return false;
 	}
 	return (true);
@@ -120,7 +120,7 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		std::cout << "Error: Wrong nb of args" << std::endl;
+		std::cout << "Error: could not open file." << std::endl;
 		return (1);
 	}
 	std::ifstream		inputFile(argv[1]);
@@ -138,7 +138,6 @@ int main(int argc, char **argv)
 			inputHeader = false;
 			continue ;
 		}
-		std::cout << inputLine << std::endl;
 		if (validate_line(inputLine))
 			bitcoin.exchangeHandler(inputLine);
 		else

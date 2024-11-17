@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:30:12 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 13:20:17 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 13:40:15 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void BitcoinExchange::readDataBase(const std::string &fileName)
 
 	if (!file.is_open())
 	{
-		std::cerr << "Error: Couldn't open the file " << fileName << std::endl;
+		std::cerr << "Error: Please provide the database " << fileName << std::endl;
 		return ;
 	}
 	header = true;
@@ -62,43 +62,30 @@ bool BitcoinExchange::skiper(std::stringstream &strstream)
 	return (true);
 }
 
-// void	BitcoinExchange::exchangeHandler(std::string &inputLine)
-// {
-// 	std::string		inputDate;
-// 	std::string		btcAmount;
-// 	double			btcAmt;
-
-// 	std::stringstream	strstream(inputLine);
-// 	if ( std::getline(strstream, inputDate, ' ') && skiper(strstream) && std::getline(strstream, btcAmount))
-// 	{
-// 		btcAmt = std::stod(btcAmount);
-
-// 	}
-// }
-
 
 void BitcoinExchange::exchangeHandler(std::string &inputLine) {
 	std::string inputDate;
 	std::string btcAmount;
 	double btcAmt;
+	double value;
 
 	std::stringstream strstream(inputLine);
 	if (std::getline(strstream, inputDate, ' ') && skiper(strstream) && std::getline(strstream, btcAmount)) 
 	{
 		btcAmt = std::stod(btcAmount);
-		auto x = exchangeRates.begin();
-		std::cout << "************|" << inputDate << "|**************" << std::endl;
-		std::cout << "************|" << x->first << "|**************" << std::endl;
-		auto it = exchangeRates.lower_bound(inputDate); // Find the first date not less than inputDate
+		// lower_bound - Find the first date not less than inputDate
+		auto it = exchangeRates.lower_bound(inputDate);
 
-		if (it != exchangeRates.end())
+		if (it != exchangeRates.begin() && (it == exchangeRates.end() || it->first > inputDate))
+			--it;
+		if (it != exchangeRates.end() && it ->first <= inputDate)
 		{
-			std::cout << "Found a date : " << it->first << " with rate " << it->second << std::endl;
+			value = btcAmt * it->second;
+			std::cout << inputDate << " => " << btcAmount << " = " << value << std::endl;
 		}
 		else
 		{
-			std::cerr << "Error: Invalid input line format" << std::endl;
-
+			std::cerr << "Error: No valid date found for " << inputDate << std::endl;
 		}
 	}
 }
