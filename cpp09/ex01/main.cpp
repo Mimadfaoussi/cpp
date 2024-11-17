@@ -6,13 +6,11 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:19:10 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 19:36:52 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:42:11 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "RPN.hpp"
-
-
 
 int main(int argc, char **argv)
 {
@@ -41,7 +39,7 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			std::cout << "Syntax Error ... " << std::endl;
+			std::cout << "Error" << std::endl;
 			return (1);
 		}
 	}

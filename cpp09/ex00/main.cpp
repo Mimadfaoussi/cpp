@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 16:41:20 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 13:41:14 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 15:10:19 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ bool validate_line(const std::string& inputLine) {
 	if (!validateValue(value)) return false;
 	return (true);
 }
-
 
 
 int main(int argc, char **argv)

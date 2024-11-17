@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 18:19:02 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/17 19:40:29 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/17 19:41:56 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		RPN::popDigit()
 		operands.pop();
 		return (value);
 	}
-	std::cout << "Error encountered" << std::endl;
+	std::cout << "Error" << std::endl;
 	exit(1);
 	return (-9999999);
 }
@@ -56,7 +56,7 @@ void	RPN::makeOperation(char c)
 
 	if (operands.size() < 2)
 	{
-		std::cout << "Error encountered" << std::endl;
+		std::cout << "Error" << std::endl;
 		exit(1);
 	}
 	nb1 = this->popDigit();
