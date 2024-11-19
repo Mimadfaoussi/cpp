@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:48:21 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/19 13:14:23 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:23:50 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,9 @@ int main(int argc, char **argv)
 	obj.extractSmallHalf();
 	obj.printNumbers();
 	obj.printSmall_numbers();
+	obj.binrayInsert();
+	obj.printSmall_numbers();
+
 	return (0);
 }
 

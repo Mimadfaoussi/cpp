@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:48:39 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/19 13:14:27 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/19 15:36:45 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,47 @@ void	PmergeMe::extractSmallHalf()
 	}
 	std::sort (small_numbers.begin(), small_numbers.end());
 	erasePairNumbers();
+}
+
+void	PmergeMe::insert(int value)
+{
+	int	start;
+	int	end;
+	int	middle;
+
+	start = 0;
+	end = small_numbers.size();
+
+	
+	while (start < end)
+	{
+		middle = start + (end - start) / 2;
+		if (value > small_numbers[middle])
+			start = middle + 1;
+		else
+			end = middle;
+	}
+	small_numbers.insert(small_numbers.begin() + start, value);
+}
+
+
+void	PmergeMe::binrayInsert()
+{
+	unsigned int	i;
+
+	i = 0;
+	while (i < numbers.size())
+	{
+		if (numbers[i] < small_numbers[0])
+			small_numbers.insert(small_numbers.begin(), numbers[i]);
+		else if (numbers[i] > small_numbers[small_numbers.size() - 1])
+			small_numbers.push_back(numbers[i]);
+		else
+		{
+			insert(numbers[i]);
+		}
+		i++;
+	}
 }
 
 

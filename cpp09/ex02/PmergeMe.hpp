@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:47:22 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/19 13:12:23 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:07:50 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ class	PmergeMe {
 	void		sortPairs();
 	void		extractSmallHalf();
 	void		erasePairNumbers();
+	void		binrayInsert();
+	void		insert(int value);
 
 	private:
 	std::vector <int> numbers;
