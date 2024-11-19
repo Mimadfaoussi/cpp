@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:48:21 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/19 16:37:13 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/19 21:19:52 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ bool	check_args(char  **argv)
 	return (true);
 }
 
+
+
 int main(int argc, char **argv)
 {
 	PmergeMe<>	obj;
@@ -63,15 +65,39 @@ int main(int argc, char **argv)
 		std::cout << "Error: Usage: ./PmergeMe sequence of int's" << std::endl;
 		return (1);
 	}
+
 	check_args(argv);
-	obj.parseArgs(argv);
-	obj.sortPairs();
-	obj.printNumbers();
-	obj.extractSmallHalf();
-	obj.printNumbers();
-	obj.printSmall_numbers();
-	obj.binrayInsert();
-	obj.printSmall_numbers();
+
+	PmergeMe<std::vector<int>> vectorPmergeMe;
+	PmergeMe<std::deque<int>> dequePmergeMe;
+
+	vectorPmergeMe.parseArgs(argv);
+	dequePmergeMe.parseArgs(argv);
+
+	vectorPmergeMe.printNumbers();
+
+	clock_t start = clock();
+	vectorPmergeMe.sortPairs();
+	vectorPmergeMe.extractSmallHalf();
+	vectorPmergeMe.binrayInsert();
+	clock_t end = clock();
+
+
+	vectorPmergeMe.printSmall_numbers();
+	std::cout << "Time to process a range of " << vectorPmergeMe.getsize() << " elements with std::vector : "
+			  << static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6 << " µs" << std::endl;
+	
+	dequePmergeMe.printNumbers();
+
+	start = clock();
+	dequePmergeMe.sortPairs();
+	dequePmergeMe.extractSmallHalf();
+	dequePmergeMe.binrayInsert();
+	end = clock();
+
+	dequePmergeMe.printSmall_numbers();
+	std::cout << "Time to process a range of " << vectorPmergeMe.getsize() << " elements with std::deque : "
+			  << static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6 << " µs" << std::endl;
 
 	return (0);
 }

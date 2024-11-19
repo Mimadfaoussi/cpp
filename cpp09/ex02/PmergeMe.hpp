@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:47:22 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/19 16:34:00 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/19 21:16:16 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 
 #include <iostream>
 #include <vector>
+# include <deque>
 #include <string>
 #include <sstream>
 #include <stdexcept>
 #include <cctype>
 #include <climits>
 #include <algorithm>
-
 
 template <typename container = std::vector <int>>
 class	PmergeMe {
@@ -41,6 +41,7 @@ class	PmergeMe {
 	void		erasePairNumbers();
 	void		binrayInsert();
 	void		insert(int value);
+	int			getsize() const;
 
 	private:
 	container numbers;
@@ -186,7 +187,7 @@ void	PmergeMe<container>::binrayInsert()
 template <typename container>
 void	PmergeMe<container>::printNumbers() const
 {
-	std::cout << "Numbers:       ";
+	std::cout << "Before: ";
 	for (typename container::const_iterator it = numbers.begin(); it != numbers.end(); ++it)
 	{
 		std::cout << *it << " ";
@@ -197,7 +198,7 @@ void	PmergeMe<container>::printNumbers() const
 template <typename container>
 void	PmergeMe<container>::printSmall_numbers() const
 {
-	std::cout << "Small Numbers: ";
+	std::cout << "After:  ";
 	for (typename container::const_iterator it = small_numbers.begin(); it != small_numbers.end(); ++it)
 	{
 		std::cout << *it << " ";
@@ -205,5 +206,10 @@ void	PmergeMe<container>::printSmall_numbers() const
 	std::cout << std::endl;
 }
 
+template <typename container>
+int	PmergeMe<container>::getsize() const
+{
+	return (small_numbers.size());
+}
 
 # endif
