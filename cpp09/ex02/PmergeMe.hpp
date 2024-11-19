@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:47:22 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/19 11:46:42 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:34:59 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ class	PmergeMe {
 	~PmergeMe();
 	
 	void		printNumbers() const;
+	void		printSmall_numbers() const;
 	void		parseArgs(char **argv);
+	void		sortPairs();
+	void		extractSmallHalf();
+	void		erasePairNumbers();
 
 	private:
 	std::vector <int> numbers;
