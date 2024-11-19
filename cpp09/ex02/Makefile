@@ -6,14 +6,14 @@
 #    By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/13 00:47:33 by mfaoussi          #+#    #+#              #
-#    Updated: 2024/11/19 10:55:45 by mfaoussi         ###   ########.fr        #
+#    Updated: 2024/11/19 11:48:00 by mfaoussi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=			c++
 NAME=		PmergeMe
 CFLAGS=		-Wall -Wextra -Werror -std=c++11
-SRCS=		main.cpp
+SRCS=		main.cpp PmergeMe.cpp
 OBJS = 		$(SRCS:.cpp=.o)
 
 all: $(NAME)

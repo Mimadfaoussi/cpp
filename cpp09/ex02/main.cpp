@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:48:21 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/19 11:05:50 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:47:38 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,16 @@ bool	check_args(char  **argv)
 
 int main(int argc, char **argv)
 {
+	PmergeMe	obj;
+
 	if (argc < 2)
 	{
 		std::cout << "Error: Usage: ./PmergeMe sequence of int's" << std::endl;
 		return (1);
 	}
 	check_args(argv);
-	
+	obj.parseArgs(argv);
+	obj.printNumbers();
 	return (0);
 }
 
