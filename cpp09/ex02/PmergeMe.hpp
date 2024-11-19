@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:47:22 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/19 12:34:59 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:12:23 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #include <stdexcept>
 #include <cctype>
 #include <climits>
+#include <algorithm>
 
 class	PmergeMe {
 

@@ -6,7 +6,7 @@
 /*   By: mfaoussi <mfaoussi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:48:39 by mfaoussi          #+#    #+#             */
-/*   Updated: 2024/11/19 13:04:50 by mfaoussi         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:14:27 by mfaoussi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,7 @@ void	PmergeMe::erasePairNumbers()
 	i = 0;
 	while (i < numbers.size() - 1 - isEven)
 	{
-		std::cout << "erasing number : " << numbers[i] << "position : " << i << std::endl;
 		numbers.erase(numbers.begin() + i);
-		std::cout << "next position : " << i << "  " << numbers[i] << std::endl;
 		i++;
 	}
 }
@@ -89,6 +87,7 @@ void	PmergeMe::extractSmallHalf()
 		}
 		i++;
 	}
+	std::sort (small_numbers.begin(), small_numbers.end());
 	erasePairNumbers();
 }
 
